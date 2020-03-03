@@ -4,6 +4,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
+    "esModuleInterop": true,
+    "typeRoots": ["./types"],
     "jsx": "react",
     "allowJs": true
   }

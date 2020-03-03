@@ -1,6 +1,6 @@
-import "./hello-world-button.less";
+import "./hello-world.component.less";
 
-class HelloWorldButton {
+class HelloWorldComponent {
   btnText: string;
   paraText: string;
   render() {
@@ -20,4 +20,4 @@ class HelloWorldButton {
   }
 }
 
-export default HelloWorldButton;
+export default HelloWorldComponent;
