@@ -13,7 +13,12 @@ module.exports = {
     publicPath: "",
     filename: "[name].[contenthash].js"
   },
-  mode: "development",
+  mode: "production",
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
   module: {
     rules: [
       {
@@ -47,13 +52,13 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'hello-world.html',
-      chunks: ['hello-world'],
+      chunks: ['hello-world', 'vendors~hello-world~honey'],
       title: "Hello World",
       template: "page-template.hbs"
     }),
     new HtmlWebpackPlugin({
       filename: 'honey.html',
-      chunks: ['honey'],
+      chunks: ['honey', 'vendors~hello-world~honey'],
       title: "Honey",
       template: "page-template.hbs"
     })

@@ -3,11 +3,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: {
+    'hello-world': './src/routes/hello-world.ts',
+    'honey': './src/routes/honey.ts',
+  },
   output: {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   mode: "development",
   devServer: {
@@ -47,8 +50,16 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'hello-world.html',
+      chunks: ['hello-world', 'vendors~hello-world~honey'],
       title: "Hello World",
-      template: "index.hbs"
+      template: "page-template.hbs"
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'honey.html',
+      chunks: ['honey', 'vendors~hello-world~honey'],
+      title: "Honey",
+      template: "page-template.hbs"
     })
   ]
 };
