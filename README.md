@@ -1,3 +1,3 @@
 # webpack2020
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/webpack2020)
+Created this app based on [Udemy Tutorial](https://www.udemy.com/course/webpack-from-beginner-to-advanced/) 
